@@ -127,10 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="123.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Double.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="PrintInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="text.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="Double.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="PrintInfo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
