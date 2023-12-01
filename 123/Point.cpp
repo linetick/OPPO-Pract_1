@@ -15,11 +15,11 @@ std::vector<Point> read_points(std::istream& in)
 
 Point Point::create(std::istream& in)
 {
-    Double coordinates = Double::ReadCoordinate(in);
+    Coordinate coordinates = Coordinate::ReadCoordinate(in);
     double a = coordinates.a;
     double b = coordinates.b;
 
-    return Point(ReadColor(in), Double(a, b));
+    return Point(ReadColor(in), Coordinate(a, b));
 }
 
 void Point::print(std::ostream& out) const

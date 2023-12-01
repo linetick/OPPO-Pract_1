@@ -3,13 +3,13 @@
 #include <istream>
 
 #include "Color.h"
-#include "Double.h"
+#include "Coordinate.h"
 
 struct Point
 {
     Color color;
-    Double coordinate;
-    Point(Color c, const Double& p) 
+    Coordinate coordinate;
+    Point(Color c, const Coordinate& p) 
         : color(c), coordinate(p) {}
 
     static Point create(std::istream& in);

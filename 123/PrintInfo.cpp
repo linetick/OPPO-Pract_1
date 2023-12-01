@@ -1,6 +1,6 @@
 #include "Point.h"
 #include "Color.h"
-#include "Double.h"
+#include "Coordinate.h"
 #include "PrintInfo.h"
 
 void ReadFile(const std::string& text)
