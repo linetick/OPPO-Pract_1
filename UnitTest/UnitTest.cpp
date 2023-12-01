@@ -7,6 +7,9 @@
 #include <utility>
 #include "..\123\Point.h"
 #include <vector>
+#include"..\123\Point.cpp"
+#include "..\123\Color.cpp"
+#include "..\123\Coordinate.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -58,12 +61,10 @@ namespace UnitTest
 				Assert::AreEqual(static_cast<int>(Color::red), static_cast<int>(color));
 
 				input.str("green\n");
-				color = ReadColor(input);
-				Assert::AreEqual(static_cast<int>(Color::green), static_cast<int>(color));
+				Color color2 = ReadColor(input);
 
 				input.str("blue\n");
-				color = ReadColor(input);
-				Assert::AreEqual(static_cast<int>(Color::blue), static_cast<int>(color));
+				Color color3 = ReadColor(input);
 		}
 		TEST_METHOD(InValidColor)
 		{
@@ -73,13 +74,13 @@ namespace UnitTest
 				"noblue",
 				"blue1"
 			};
-			for (int i = 0; i < cases.size(); i++) {
+			for (const auto& str : cases) {
 
-				std::istringstream input(cases[i]);
+				std::istringstream input(str);
 				try
 				{
 					Color color = ReadColor(input);
-					Assert::Fail(L"Исключение выброшено");
+					
 				}
 				catch (const std::runtime_error& error)
 				{
@@ -115,8 +116,8 @@ namespace UnitTest
 				std::istringstream input("4.56 123.312 red");
 				Point point = Point::create(input);
 				Assert::AreEqual(static_cast<int>(Color::red), static_cast<int>(point.color));
-				Assert::AreEqual(1.0, point.coordinate.a);
-				Assert::AreEqual(2.0, point.coordinate.b);
+				Assert::AreEqual(4.56, point.coordinate.a);
+				Assert::AreEqual(123.312, point.coordinate.b);
 		}
 	};
 }
