@@ -1,0 +1,21 @@
+@startuml
+Point -> Color
+Point -> Coordinate
+Point : - color: Color
+Point : Point()
+Point : create()
+Point : print()
+
+Coordinate : -a: double
+Coordinate : -b: double
+Coordinate : +ReadCoordinate()
+Coordinate : +validateCoordinates(): string
+Coordinate : +InvalidCoordinate(): string
+
+Color :  green 
+Color :  red
+Color :  blue
+Color : +ReadColor()
+Color : +SetColor()
+Color : +PrintColor()
+@enduml
